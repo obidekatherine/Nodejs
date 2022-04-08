@@ -19,7 +19,11 @@ console.log(`Hello World! My first node code!`);*/
 
 const name = require('./1-modules');
 const sayName = require('./2-modules');
+const data = require('./alternative-modules-export');
+require('./grenade');
 
-//console.log(name);
+console.log(name);
 
 sayName(name.place);
+
+console.log(data);
