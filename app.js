@@ -17,4 +17,9 @@ console.log(`Hello World! My first node code!`);*/
 //CommonJS, every file is a module by default
 //Modules - Encapsulated Code (only share minimum)
 
-sayName(place);
+const name = require('./1-modules');
+const sayName = require('./2-modules');
+
+//console.log(name);
+
+sayName(name.place);
