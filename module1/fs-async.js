@@ -2,6 +2,7 @@
 const {readFile, writeFile} = require('fs'); // reading two files or const fs = require('fs');
 //callback is called when we are done
 
+console.log('Start!');
 readFile('./content/first.txt', 'utf8', (err, result) => {
     if(err) {
         console.log(err)
@@ -19,8 +20,9 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
                 console.log(err)
                 return
             }
-            console.log(result)
+            console.log('Task Done!')
         })   
     })
 })
+console.log('Start Next One!');
 
