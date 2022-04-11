@@ -16,7 +16,7 @@
 
 //global dependency - use it in any project
 //npm install -g <packageName>
-//sudo install -g <packageName> (mac)
+//sudo npm install -g <packageName> (mac)
 
 //package.json - manifest file (stores important info about project/package)
 //manual approach (create package.json in the root, create properties etc)
