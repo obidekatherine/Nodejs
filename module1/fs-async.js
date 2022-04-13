@@ -26,3 +26,24 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
 })
 console.log('Start Next One!');
 
+
+//setInterval is asynchronous
+
+setInterval(()=> {
+    console.log('Hello World!');
+}, 2000)
+console.log('I will run first');
+
+//process stays alive unless {1} kill process CONTROL + C or Unexpected Error
+
+
+//setTimeout is asynchronous
+
+//started operating system process
+console.log('First');
+setTimeout(()=> {
+    console.log('Second');
+}, 0)
+console.log('Third');
+//completed and exited operating system procress
+
