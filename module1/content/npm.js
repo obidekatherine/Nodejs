@@ -5,7 +5,7 @@
 //npm init - creates package.json file
 //npm install - installs the package
 //npm install -g - installs the package globally
-//npm install -g nodemon - installs nodemon globally
+//npm i nodemon -D
 //npm install -D - installs the package as dev dependency
 //npm uninstall -D - removes the package as dev dependency
 
@@ -22,3 +22,5 @@
 //manual approach (create package.json in the root, create properties etc)
 //npm init (step by step, press enter to skip)
 //npm init -y (everything default)
+
+//installing dependencies comes with node_modules and package-lock.json folders eg. intalling lodash (npm i lodash)
