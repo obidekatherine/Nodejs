@@ -5,6 +5,8 @@ const path = require('path');
 const app = express()
 
 // setup static and middleware
+//unlike in http instead of setting up url for each server, set a pubic static folder and use this method
+//the file names must be the same, as it is on web browser eg. styles.css
 app.use(express.static('./public'))
 
 app.get('/',(req, res)=> {
