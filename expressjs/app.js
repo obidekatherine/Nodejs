@@ -5,13 +5,14 @@ const path = require('path');
 const app = express()
 
 // setup static and middleware
-//unlike in http instead of setting up url for each server, set a pubic static folder and use this method
+//unlike in http instead of setting up url for each assets, set a pubic static folder and use this method
+//static folder is the folder that server doesnt change
 //the file names must be the same, as it is on web browser eg. styles.css
 app.use(express.static('./public'))
 
-app.get('/',(req, res)=> {
+/*app.get('/',(req, res)=> {
     res.sendFile(path.resolve(__dirname,'./navbar-app/index.html'))
-})
+})*/
 
 
 app.all('*', (reg, res)=> {
