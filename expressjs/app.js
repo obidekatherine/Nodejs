@@ -1,24 +1,42 @@
 const express = require('express');
-const path = require('path');
+const app = express();
 
+const {products} = require('./data');
 
-const app = express()
-
-// setup static and middleware
-//unlike in http instead of setting up url for each assets, set a pubic static folder and use this method
-//static folder is the folder that server doesnt change
-//the file names must be the same, as it is on web browser eg. styles.css
-app.use(express.static('./public'))
-
-/*app.get('/',(req, res)=> {
-    res.sendFile(path.resolve(__dirname,'./navbar-app/index.html'))
-})*/
-
-
-app.all('*', (reg, res)=> {
-    res.status(404).send('<h1>Server not found!</h1>')
+app.get('/', (req, res) => {
+    //res.json(products);
+    res.send('<h1>Home Page</h1><a href="/api.products">products</a>');
 })
 
-app.listen(4000, ()=> {
-    console.log('Server is running on port 4000....')
+app.get('/api/products', (req, res) => {
+    const newProducts = products.map((product) => {
+        const {id, name, image} = product;
+        return {id, name, image};
+    })
+    res.json(newProducts);
+})
+
+app.get('/api/products/:productID', (req, res) => {
+
+    //console.log(req);
+    //console.log(req.params);
+
+    const {productID} = req.params;
+    const singleProduct = products.find((product) => product.id === Number(productID));
+
+    if(!singleProduct){
+      return res.status(404).send('Product not found');
+    }
+
+    res.json(singleProduct);
+})
+
+app.get('/api/products/:productID/reviews/:reviewID', (req, res)=>{ //route parameters in express example,note: reviews is hardcoded
+    console.log(req.params);
+    res.send('<h1>Review Page</h1>');
+})
+
+
+app.listen(4000, () =>{
+    console.log('Server is listening on port 4000....');
 })
