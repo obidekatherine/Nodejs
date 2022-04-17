@@ -1,9 +1,11 @@
 const express = require('express')
 const app = express()
 const logger = require('./logger')
+const authorize = require('./authorize')
+
 // req => middleware => res
 
-app.use(logger) // instead of using the middleware(logger) on each line, declare app.use
+app.use(logger, authorize) // they are being executed in order of placement
 
 
 app.get('/', (req, res) => {   
